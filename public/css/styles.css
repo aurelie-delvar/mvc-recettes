@@ -1,0 +1,15 @@
+.lienrecette {
+    text-decoration: none;
+    color: #8A211D;
+    /* font-family: ; */
+}
+
+.lienrecette a {
+    text-decoration: none;
+    color: #8A211D;
+    /* font-family: ; */
+}
+
+.sizetry {
+    width: calc(100% / 3);
+}

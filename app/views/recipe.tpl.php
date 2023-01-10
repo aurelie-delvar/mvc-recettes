@@ -1,0 +1,1 @@
+<h1>Recette : <?= $recipe->getName() ?></h1>
