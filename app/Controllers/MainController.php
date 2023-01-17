@@ -1,16 +1,23 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Controllers\ErrorController;
+// use App\Controllers\CoreController;
+use App\Models\Recipe;
+
 require_once __DIR__ . '/../Controllers/CoreController.php';
-require_once __DIR__ . '/../Controllers/ErrorController.php';
+// require_once __DIR__ . '/../Controllers/ErrorController.php';
 
 class MainController extends CoreController
 {
     public function home()
     {
+
         $recipeModel = new Recipe();
         $recipes = $recipeModel->findAll();
 
-        $this->show('home', [
+        $this->show('main/home', [
             'recipes' => $recipes,
         ]);
     }
@@ -28,7 +35,7 @@ class MainController extends CoreController
             return;
         }
 
-        $this->show('recipe', [
+        $this->show('main/recipe', [
             'recipe' => $recipe,
         ]);
 

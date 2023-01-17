@@ -20,23 +20,14 @@
 
         <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link"href="#">Préliminaire</a>
-            <a class="nav-link" href="#">Intercourse</a>
-            <a class="nav-link" href="#">Orgasme</a>
+          <a class="nav-link" href="<?= $router->generate('home') ?>">Accueil</a>
+            <a class="nav-link"href="<?= $router->generate('preli') ?>">Préliminaire</a>
+            <a class="nav-link" href="<?= $router->generate('intercourse') ?>">Intercourse</a>
+            <a class="nav-link" href="<?= $router->generate('orgasme') ?>">Orgasme</a>
           </div>
         </div>
 
       </div>
-    </nav>
-
-    <h1>Blog de recettes</h1>
-
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?= $router->generate('home') ?>">Accueil</a></li>
-            <li class="breadcrumb-item"><a href="#">Recettes de saison</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Autre-rubrique</li>
-        </ol>
     </nav>
 
     </header>

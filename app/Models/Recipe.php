@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Models;
+
+use PDO;
+use App\Models\Database;
+
 class Recipe
 {
     private $id;
@@ -35,7 +40,7 @@ class Recipe
         SELECT * 
         FROM recipe
         ');
-        $recipes = $query->fetchAll(PDO::FETCH_CLASS, 'Recipe');
+        $recipes = $query->fetchAll(\PDO::FETCH_CLASS, 'App\Models\Recipe');
 
         return $recipes;
     }
@@ -47,9 +52,44 @@ class Recipe
         SELECT *
         FROM recipe
         WHERE id = ' . $id);
-        $recipe = $query->fetchObject('Recipe');
+        $recipe = $query->fetchObject('App\Models\Recipe');
 
         return $recipe;
     }
 
+    public static function findAllPrelis()
+    {
+        $pdo = Database::getPDO();
+        $query = $pdo->query("
+        SELECT * FROM recipe
+        WHERE type = 'entrée'
+        ");
+        $prelis = $query->fetchAll(\PDO::FETCH_CLASS, 'App\\Models\\Recipe');
+
+        return $prelis;
+    }
+
+    public static function findAllIntercourses()
+    {
+        $pdo = Database::getPDO();
+        $query = $pdo->query("
+        SELECT * FROM recipe
+        WHERE type = 'plat'
+        ");
+        $inters = $query->fetchAll(\PDO::FETCH_CLASS, 'App\\Models\\Recipe');
+
+        return $inters;
+    }
+
+    public static function findAllOrgasms()
+    {
+        $pdo = Database::getPDO();
+        $query = $pdo->query("
+        SELECT * FROM recipe
+        WHERE type = 'dessert'
+        ");
+        $orgasms = $query->fetchAll(\PDO::FETCH_CLASS, 'App\\Models\\Recipe');
+
+        return $orgasms;
+    }
 }

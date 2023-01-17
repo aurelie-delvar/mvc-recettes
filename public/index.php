@@ -1,10 +1,9 @@
 <?php
 
 // ici les requires ou l'autoload
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../app/Models/Database.php';
-require_once __DIR__ . '/../app/Models/Recipe.php';
-
+require_once __DIR__.'/../vendor/autoload.php';
+// require_once __DIR__ . '/../app/Models/Database.php';
+// require_once __DIR__ . '/../app/Models/Recipe.php';
 
 // initialisation d'altorouter
 $router = new AltoRouter();
@@ -37,22 +36,64 @@ $router->map(
     'recipe',
 );
 
+// page des entrées
+$router->map(
+    'GET',
+    '/preliminaires',
+    [
+        'controller' => 'DishesController',
+        'methode' => 'preli',
+    ],
+    'preli',
+);
+
+// page des plats
+$router->map(
+    'GET',
+    '/intercourse',
+    [
+        'controller' => 'DishesController',
+        'methode' => 'intercourse',
+    ],
+    'intercourse',
+);
+
+// page des desserts
+$router->map(
+    'GET',
+    '/orgasme',
+    [
+        'controller' => 'DishesController',
+        'methode' => 'orgasm',
+    ],
+    'orgasme',
+);
+
 // dispatch sur un controller avec match
 $match = $router->match();
 
 if($match){
 
     $controllerName = $match['target']['controller'];
+
+    // require_once __DIR__."/../app/Controllers/$controllerName.php";
+
+    $controllerFQCN = 'App\\Controllers\\' . $controllerName;
+    $controller = new $controllerFQCN();
+
     $method = $match['target']['methode'];
 
-    require_once __DIR__ . "/../app/Controllers/$controllerName.php";
+    // require_once __DIR__ . "/../app/Controllers/$controllerName.php";
 
-    (new $controllerName())->$method($match['params']);
+    $controller->$method($match['params']);
 
 } else {
 
-    require_once __DIR__ . '/../app/Controllers/ErrorController.php';
+    // require_once __DIR__ . '/../app/Controllers/ErrorController.php';
 
-    (new ErrorController())->error404();
+    // (new ErrorController())->error404();
+
+    $controller = new App\Controllers\ErrorController();
+    $controller->error404();
 
 }

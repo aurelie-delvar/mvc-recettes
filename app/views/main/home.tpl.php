@@ -1,3 +1,13 @@
+<h1>Blog de recettes</h1>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<?= $router->generate('home') ?>">Accueil</a></li>
+        <li class="breadcrumb-item"><a href="#">Recettes de saison</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Autre-rubrique</li>
+    </ol>
+</nav>
+
 <div class="container-fluid">
 <div class="row">
 
