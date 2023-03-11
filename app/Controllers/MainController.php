@@ -17,7 +17,7 @@ class MainController extends CoreController
         $recipeModel = new Recipe();
         $recipes = $recipeModel->findAll();
 
-        $this->show('main/home', [
+        $this->show('main/index', [
             'recipes' => $recipes,
         ]);
     }
@@ -39,6 +39,11 @@ class MainController extends CoreController
             'recipe' => $recipe,
         ]);
 
+    }
+
+    public function contact()
+    {
+        $this->show('useful/contact');
     }
 
 }

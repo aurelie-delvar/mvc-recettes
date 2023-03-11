@@ -10,31 +10,35 @@ use App\Models\Recipe;
 class DishesController extends CoreController
 {
 
-    public function preli()
+    public function categories()
     {
-        $prelis = Recipe::findAllPrelis();
+        $entrances = Recipe::findAllEntrances();
+        $maindishes = Recipe::findAllMaindishes();
+        $deserts = Recipe::findAllDeserts();
+
+        $this->show('dishes/categories', [
+            'entrances' => $entrances,
+            'maindishes' => $maindishes,
+            'deserts' => $deserts,
+        ]);
+    }
+
+    // public function maindish()
+    // {
         
-        $this->show('dishes/preli', [
-            'prelis' => $prelis,
-        ]);
-    }
 
-    public function intercourse()
-    {
-        $inters = Recipe::findAllIntercourses();
+    //     $this->show('dishes/maindish', [
+            
+    //     ]);
+    // }
 
-        $this->show('dishes/intercourse', [
-            'inters' => $inters,
-        ]);
-    }
+    // public function desert()
+    // {
+        
 
-    public function orgasm()
-    {
-        $orgasms = Recipe::findAllOrgasms();
-
-        $this->show('dishes/orgasme', [
-            'orgasms' => $orgasms,
-        ]);
-    }
+    //     $this->show('dishes/desert', [
+            
+    //     ]);
+    // }
 
 }

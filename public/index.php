@@ -39,34 +39,45 @@ $router->map(
 // page des entrées
 $router->map(
     'GET',
-    '/preliminaires',
+    '/entrees',
     [
         'controller' => 'DishesController',
-        'methode' => 'preli',
+        'methode' => 'categories',
     ],
-    'preli',
+    'entrance',
 );
 
 // page des plats
 $router->map(
     'GET',
-    '/intercourse',
+    '/plats-principaux',
     [
         'controller' => 'DishesController',
-        'methode' => 'intercourse',
+        'methode' => 'categories',
     ],
-    'intercourse',
+    'maindish',
 );
 
 // page des desserts
 $router->map(
     'GET',
-    '/orgasme',
+    '/desserts',
     [
         'controller' => 'DishesController',
-        'methode' => 'orgasm',
+        'methode' => 'categories',
     ],
-    'orgasme',
+    'desert',
+);
+
+// page contact
+$router->map(
+    'GET',
+    '/contact',
+    [
+        'controller' => 'MainController',
+        'methode' => 'contact',
+    ],
+    'contact',
 );
 
 // dispatch sur un controller avec match

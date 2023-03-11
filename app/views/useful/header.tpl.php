@@ -1,38 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog de recettes</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?= $baseURI ?>/css/styles.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoga Studio Template">
+    <meta name="keywords" content="Yoga, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recettes</title>
 
-  </head>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
 
-  <body>
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="<?= $baseURI ?>/assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="<?= $baseURI ?>/assets/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="<?= $baseURI ?>/assets/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="<?= $baseURI ?>/assets/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="<?= $baseURI ?>/assets/css/style.css" type="text/css">
+</head>
 
-    <header>
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-          <a class="nav-link" href="<?= $router->generate('home') ?>">Accueil</a>
-            <a class="nav-link"href="<?= $router->generate('preli') ?>">Préliminaire</a>
-            <a class="nav-link" href="<?= $router->generate('intercourse') ?>">Intercourse</a>
-            <a class="nav-link" href="<?= $router->generate('orgasme') ?>">Orgasme</a>
-          </div>
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container">
+            <div class="logo">
+                <a href="<?= $router->generate('home') ?>"><img src="<?= $baseURI ?>/assets/img/logo.png" alt="logo du site Yummy"></a>
+            </div>
+            <div class="nav-menu">
+                <nav class="main-menu mobile-menu">
+                    <ul>
+                        <li class="active"><a href="<?= $router->generate('home') ?>">Accueil</a></li>
+                        <li><a href="<?= $router->generate('entrance') ?>">Entrées</a></li>
+                        <li><a href="<?= $router->generate('maindish') ?>">Plats</a></li>
+                        <li><a href="<?= $router->generate('desert') ?>">Desserts</a></li>
+                        <li><a href="<?= $router->generate('contact') ?>">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-right search-switch">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
         </div>
-
-      </div>
-    </nav>
-
     </header>
+<!-- Header End -->
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
+<?php if($viewName !== 'main/index') { ?>
+<!-- Hero Search Section Begin -->
+<div class="hero-search set-bg" data-setbg="<?= $baseURI ?>/assets/img/search-bg.jpg">
+    <div class="container">
+        <div class="filter-table">
+            <form action="#" class="filter-search">
+                <input type="text" placeholder="Search recipe">
+                <select id="category">
+                    <option value="">Category</option>
+                </select>
+                <select id="tag">
+                    <option value="">Tags</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Hero Search Section End -->
+<?php } ?>

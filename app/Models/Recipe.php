@@ -57,39 +57,39 @@ class Recipe
         return $recipe;
     }
 
-    public static function findAllPrelis()
+    public static function findAllEntrances()
     {
         $pdo = Database::getPDO();
         $query = $pdo->query("
         SELECT * FROM recipe
         WHERE type = 'entrée'
         ");
-        $prelis = $query->fetchAll(\PDO::FETCH_CLASS, 'App\\Models\\Recipe');
+        $entrances = $query->fetchAll(\PDO::FETCH_CLASS, 'App\\Models\\Recipe');
 
-        return $prelis;
+        return $entrances;
     }
 
-    public static function findAllIntercourses()
+    public static function findAllMaindishes()
     {
         $pdo = Database::getPDO();
         $query = $pdo->query("
         SELECT * FROM recipe
         WHERE type = 'plat'
         ");
-        $inters = $query->fetchAll(\PDO::FETCH_CLASS, 'App\\Models\\Recipe');
+        $maindishes = $query->fetchAll(\PDO::FETCH_CLASS, 'App\\Models\\Recipe');
 
-        return $inters;
+        return $maindishes;
     }
 
-    public static function findAllOrgasms()
+    public static function findAllDeserts()
     {
         $pdo = Database::getPDO();
         $query = $pdo->query("
         SELECT * FROM recipe
         WHERE type = 'dessert'
         ");
-        $orgasms = $query->fetchAll(\PDO::FETCH_CLASS, 'App\\Models\\Recipe');
+        $deserts = $query->fetchAll(\PDO::FETCH_CLASS, 'App\\Models\\Recipe');
 
-        return $orgasms;
+        return $deserts;
     }
 }
