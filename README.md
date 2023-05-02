@@ -8,6 +8,13 @@ Basiquement, il recense des recettes, et permet de les consulter.
 
 Il est réalisé en PHP, avec l'ajout d'un template Bootstrap.
 
+## Ce que je veux intégrer :
+- Un lien active sur la barre de navigation
+- Une barre de recherche
+- Plus de recettes
+- Un sytème de notation
+- Retravailler les étapes ainsi que les ingrédients (sous forme de liste)
+
 # Comment utiliser le projet
 
 - Cloner le repo GitHub : 
