@@ -2,14 +2,14 @@
 
 // ici les requires ou l'autoload
 require_once __DIR__.'/../vendor/autoload.php';
-// require_once __DIR__ . '/../app/Models/Database.php';
-// require_once __DIR__ . '/../app/Models/Recipe.php';
 
 // initialisation d'altorouter
 $router = new AltoRouter();
 
 // chemin de base, base URI ou RIEN
 $router->setBasePath($_SERVER['BASE_URI']) ?? '';
+
+// var_dump($_SERVER);
 
 // création des routes avec map
 
@@ -87,22 +87,14 @@ if($match){
 
     $controllerName = $match['target']['controller'];
 
-    // require_once __DIR__."/../app/Controllers/$controllerName.php";
-
     $controllerFQCN = 'App\\Controllers\\' . $controllerName;
     $controller = new $controllerFQCN();
 
     $method = $match['target']['methode'];
 
-    // require_once __DIR__ . "/../app/Controllers/$controllerName.php";
-
     $controller->$method($match['params']);
 
 } else {
-
-    // require_once __DIR__ . '/../app/Controllers/ErrorController.php';
-
-    // (new ErrorController())->error404();
 
     $controller = new App\Controllers\ErrorController();
     $controller->error404();

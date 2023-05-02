@@ -35,6 +35,7 @@
             <div class="nav-menu">
                 <nav class="main-menu mobile-menu">
                     <ul>
+                        <!-- TODO: GÉRER LA CLASSE ACTIVE -->
                         <li class="active"><a href="<?= $router->generate('home') ?>">Accueil</a></li>
                         <li><a href="<?= $router->generate('entrance') ?>">Entrées</a></li>
                         <li><a href="<?= $router->generate('maindish') ?>">Plats</a></li>
@@ -42,10 +43,6 @@
                         <li><a href="<?= $router->generate('contact') ?>">Contact</a></li>
                     </ul>
                 </nav>
-                <div class="nav-right search-switch">
-                    <i class="fa fa-search"></i>
-                </div>
-            </div>
             <div id="mobile-menu-wrap"></div>
         </div>
     </header>
@@ -54,17 +51,11 @@
 <?php if($viewName !== 'main/index') { ?>
 <!-- Hero Search Section Begin -->
 <div class="hero-search set-bg" data-setbg="<?= $baseURI ?>/assets/img/search-bg.jpg">
-    <div class="container">
+    <div class="container text-center">
         <div class="filter-table">
             <form action="#" class="filter-search">
-                <input type="text" placeholder="Search recipe">
-                <select id="category">
-                    <option value="">Category</option>
-                </select>
-                <select id="tag">
-                    <option value="">Tags</option>
-                </select>
-                <button type="submit">Search</button>
+                <input type="text" placeholder="Dahl de lentilles...">
+                <button type="submit">Rechercher</button>
             </form>
         </div>
     </div>

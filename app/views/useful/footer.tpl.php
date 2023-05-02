@@ -6,20 +6,13 @@
                     <div class="fs-left">
                         <div class="logo">
                             <a href="<?= $router->generate('home') ?>">
-                                <img src="<?= $baseURI ?>/assets/img/footer-logo.png" alt="">
+                                <img src="<?= $baseURI ?>/assets/img/footer-logo.png" alt="Logo du blog">
                             </a>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                            viverra maecenas accumsan lacus vel facilisis.</p>
+                        <p>Yummy blog est un blog de recettes !</p>
                     </div>
                 </div>
                 <div class="col-lg-6 offset-lg-1">
-                    <form action="#" class="subscribe-form">
-                        <h3>Subscribe to our newsletter</h3>
-                        <input type="email" placeholder="Your e-mail">
-                        <button type="submit">Subscribe</button>
-                    </form>
                     <div class="social-links">
                         <a href="#"><i class="fa fa-instagram"></i><span>Instagram</span></a>
                         <a href="#"><i class="fa fa-pinterest"></i><span>Pinterest</span></a>
@@ -41,17 +34,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
     <!-- Footer Section End -->
-
-    <!-- Search model -->
-	<div class="search-model">
-		<div class="h-100 d-flex align-items-center justify-content-center">
-			<div class="search-close-switch">+</div>
-			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here.....">
-			</form>
-		</div>
-	</div>
-	<!-- Search model end -->
 
     <!-- Js Plugins -->
     <script src="<?= $baseURI ?>/assets/js/jquery-3.3.1.min.js"></script>

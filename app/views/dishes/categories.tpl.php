@@ -32,18 +32,6 @@
     <?php endforeach; ?>
             
         </div>
-
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="recipe-pagination">
-                    <a href="#" class="active">01</a>
-                    <a href="#">02</a>
-                    <a href="#">03</a>
-                    <a href="#">04</a>
-                    <a href="#">Next</a>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 <!-- Recipe Section End -->

@@ -11,6 +11,8 @@ class Recipe
     private $name;
     private $description;
     private $image;
+    private $items;
+    private $instructions;
 
     public function getId()
     {
@@ -31,6 +33,31 @@ class Recipe
     public function getImage()
     {
         return $this->image;
+    }
+
+
+    public function getItems()
+    {
+        return $this->items;
+    }
+
+    public function setItems($items)
+    {
+        $this->items = $items;
+
+        return $this;
+    }
+
+    public function getInstructions()
+    {
+        return $this->instructions;
+    }
+
+    public function setInstructions($instructions)
+    {
+        $this->instructions = $instructions;
+
+        return $this;
     }
 
     public function findAll()
